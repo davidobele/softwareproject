@@ -1,0 +1,42 @@
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-detail{
+    display: flex;
+    align-items: center;
+}
+
+.user-detail p{
+    margin-right: 10px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section{
+    border: 1px solid;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 400px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
