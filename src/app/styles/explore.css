@@ -1,0 +1,107 @@
+.fancy-button {
+  border: none;
+  outline: none;
+  background: black;
+  color: white;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  margin: auto;
+  padding: 12px 32px 12px 82px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.fancy-button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.fancy-button .label,
+.fancy-button .icon-arrow {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  perspective: 1000;
+}
+
+.fancy-button .label {
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.fancy-button .icon-arrow {
+  fill: white;
+  height: 15px;
+  top: 17px;
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1),
+    opacity 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  width: 35px;
+}
+
+.fancy-button .icon-arrow.before {
+  left: 32px;
+  margin-right: 15px;
+  position: absolute;
+  transform-origin: left center;
+}
+
+.fancy-button .icon-arrow.after {
+  margin-left: 15px;
+  opacity: 0;
+  position: absolute;
+  right: 32px;
+  transform: translateX(75%) scaleX(0.1);
+  transform-origin: right center;
+}
+
+.fancy-button:hover .label {
+  transform: translateX(-52px);
+}
+
+.fancy-button:hover .icon-arrow.before {
+  opacity: 0;
+  transform: translateX(-75%) scaleX(0.1);
+}
+
+.fancy-button:hover .icon-arrow.after {
+  opacity: 1;
+  transform: translateX(0) scaleX(1);
+}
