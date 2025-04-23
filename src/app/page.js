@@ -4,6 +4,7 @@ import "./styles/home.css";
 import "./styles/background.css";
 import "./styles/explore.css";
 import * as ICONS from "./svg";
+import Sticker from "./components/Sticker";
 import Link from "next/link";
 
 export default function Page() {
@@ -50,8 +51,9 @@ export default function Page() {
         <main>
           <div className="one">
             <div className="words">
-              <h1>Life's Hard</h1>
-              <h1>Your Money Shouldn't Be</h1>
+              <h1>
+                Life is Complicated<br></br>Your Money Shouldn't Be
+              </h1>
             </div>
             <div className="features">
               <div className="features-inner">
@@ -104,7 +106,7 @@ export default function Page() {
                 <svg className="icon-arrow before">
                   <use href="#arrow"></use>
                 </svg>
-                <Link href="/login">
+                <Link href="\login">
                   <span className="label">Get Started</span>
                 </Link>
                 <svg className="icon-arrow after">
